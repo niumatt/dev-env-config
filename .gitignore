@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 临时文件
+*.tmp
+*.log
+*.swp
+*.swo
+*~
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# 备份文件
+*.bak
+*.backup
+
+# 系统文件
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 个人配置（如果需要保密）
+configs/personal/
+
+# 测试文件
+test/
+temp/ 
