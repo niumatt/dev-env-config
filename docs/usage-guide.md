@@ -31,6 +31,50 @@ ll    # 别名，等同于 ls -la
 find . -name "*.js"
 ```
 
+#### eza - 现代化的 ls 替代工具
+eza 是一个功能强大的 `ls` 替代品，提供更美观的输出和更多功能：
+
+```bash
+# 基本用法
+eza                    # 基本列表，彩色输出
+eza -l                 # 长格式列表（类似 ls -l）
+eza -la                # 显示隐藏文件的长格式列表
+eza -lah               # 人类可读的文件大小格式
+
+# 高级功能
+eza --tree             # 树状显示目录结构
+eza --tree --level=2   # 限制树状显示的层级
+eza -l --git           # 显示 Git 状态信息
+eza -l --time-style=long-iso  # 使用 ISO 时间格式
+
+# 排序选项
+eza -l --sort=size     # 按文件大小排序
+eza -l --sort=modified # 按修改时间排序
+eza -l --sort=created  # 按创建时间排序
+eza -l --reverse       # 反向排序
+
+# 过滤和显示
+eza -l --only-dirs     # 仅显示目录
+eza -l --group-directories-first  # 目录优先显示
+eza -la --ignore-glob="*.tmp"     # 忽略特定文件
+
+# 彩色和图标
+eza --icons            # 显示文件类型图标
+eza --no-filesize      # 隐藏文件大小
+eza --no-time          # 隐藏时间信息
+eza --no-permissions   # 隐藏权限信息
+```
+
+**推荐别名设置** (可添加到 `~/.zshrc`)：
+```bash
+# eza 别名 - 逐步替代传统 ls
+alias ls='eza --icons'
+alias ll='eza -l --icons --git'
+alias la='eza -la --icons --git'
+alias tree='eza --tree --icons'
+alias lt='eza -l --sort=modified --reverse --icons'  # 最新修改的文件在最前
+```
+
 #### 快速目录跳转 (z 插件)
 ```bash
 # 记住访问过的目录，智能跳转
